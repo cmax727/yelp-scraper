@@ -1,0 +1,46 @@
+DROP TABLE IF EXISTS `yelp`.`m4_urls`;
+CREATE TABLE  `manta_db`.`m4_urls` (
+  `url` varchar(222) CHARACTER SET utf8 NOT NULL,
+  `rd` int(10) unsigned DEFAULT '0',
+  `cflt` varchar(145) CHARACTER SET utf8 DEFAULT NULL,
+  `total` int(10) unsigned DEFAULT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `city` varchar(145) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `Index_2` (`url`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1721950 DEFAULT CHARSET=ascii;
+
+DROP TABLE IF EXISTS `yelp`.`m4_cities`;
+CREATE TABLE  `manta_db`.`m4_cities` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `state` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `rd` int(10) unsigned DEFAULT '0',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE KEY `Index_2` (`state`,`city`)
+) ENGINE=InnoDB AUTO_INCREMENT=34341 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `yelp`.`m4_yelp`;
+CREATE TABLE  `manta_db`.`m4_yelp` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `biz_id` varchar(145) NOT NULL,
+  `name` varchar(145) DEFAULT NULL,
+  `image_url` varchar(145) DEFAULT NULL,
+  `url` varchar(222) DEFAULT NULL,
+  `phone` varchar(145) DEFAULT NULL,
+  `review_count` varchar(10) DEFAULT NULL,
+  `categories` varchar(145) DEFAULT NULL,
+  `latitude` varchar(45) DEFAULT NULL,
+  `longitude` varchar(45) DEFAULT NULL,
+  `address` varchar(245) DEFAULT NULL,
+  `city` varchar(145) DEFAULT NULL,
+  `state_code` varchar(45) DEFAULT NULL,
+  `postal_code` varchar(45) DEFAULT NULL,
+  `country_code` varchar(45) DEFAULT NULL,
+  `raiting` varchar(15) DEFAULT NULL,
+  `neighborhoods` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `Index_2` (`biz_id`),
+  KEY `Index_3` (`url`)
+) ENGINE=InnoDB AUTO_INCREMENT=6811 DEFAULT CHARSET=utf8;
+
